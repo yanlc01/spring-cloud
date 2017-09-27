@@ -5,9 +5,9 @@
     <artifactId>springCloud</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>eureka-server</artifactId>
-  <name>eureka-server</name>
-  <description>服务注册中心-Eureka Server</description>
+  <artifactId>eureka-ribbon</artifactId>
+  <name>eureka-ribbon</name>
+  <description>服务消费者-Eureka Ribbon</description>
   
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,42 +38,46 @@
         <scope>test</scope>
     </dependency>
     
-    <!--eureka server -->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-eureka-server</artifactId>
+        <artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-ribbon</artifactId>
     </dependency>
     
     <!-- dataSource -->
-    <dependency>
+    <!-- <dependency>
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
 	</dependency>
 	<dependency>
 	    <groupId>com.alibaba</groupId>
 	    <artifactId>druid</artifactId>
-	</dependency>
-    
+	</dependency> -->
+  
   </dependencies>
   
   <build>
-  	<finalName>eureka server</finalName>
+  	<finalName></finalName>
   	<plugins>
   		<plugin>
   			<groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <version>1.5.2.RELEASE</version>
-            <configuration>
-                <mainClass>com.cloud.server.EurekaServerApplication</mainClass>
-            </configuration>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>repackage</goal>
-                    </goals>
-                </execution>
-            </executions>
+  			<artifactId>spring-boot-maven-plugin</artifactId>
+  			<version>1.5.2.RELEASE</version>
+  			<configuration>
+  				<mainClass>com.cloud.ribbon.EurekaRibbonApplication</mainClass>
+  			</configuration>
+  			<executions>
+  				<execution>
+  					<goals>
+  						<goal>repackage</goal>
+  					</goals>
+  				</execution>
+  			</executions>
   		</plugin>
   	</plugins>
   </build>
+  
 </project>

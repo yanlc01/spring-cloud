@@ -5,9 +5,9 @@
     <artifactId>springCloud</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>eureka-server</artifactId>
-  <name>eureka-server</name>
-  <description>服务注册中心-Eureka Server</description>
+  <artifactId>eureka-client</artifactId>
+  <name>eureka-client</name>
+  <description>服务提供者-Eureka Client</description>
   
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,10 +38,9 @@
         <scope>test</scope>
     </dependency>
     
-    <!--eureka server -->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-eureka-server</artifactId>
+        <artifactId>spring-cloud-starter-eureka</artifactId>
     </dependency>
     
     <!-- dataSource -->
@@ -53,18 +52,17 @@
 	    <groupId>com.alibaba</groupId>
 	    <artifactId>druid</artifactId>
 	</dependency>
-    
   </dependencies>
   
   <build>
-  	<finalName>eureka server</finalName>
+  	<finalName>eureka-client</finalName>
   	<plugins>
   		<plugin>
   			<groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <version>1.5.2.RELEASE</version>
             <configuration>
-                <mainClass>com.cloud.server.EurekaServerApplication</mainClass>
+                <mainClass>com.cloud.client.EurekaClientApplication</mainClass>
             </configuration>
             <executions>
                 <execution>
@@ -76,4 +74,5 @@
   		</plugin>
   	</plugins>
   </build>
+  
 </project>

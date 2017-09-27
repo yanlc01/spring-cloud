@@ -5,7 +5,7 @@
     <artifactId>springCloud</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>erreka-common</artifactId>
+  <artifactId>eureka-common</artifactId>
   
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
