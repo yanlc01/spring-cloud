@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cloud.ribbon.service.HelloService;
 
 @RestController
-@RequestMapping(path = "/", produces = {"application/json; charset=UTF-8"})
+@RequestMapping(value = "/ribbon", produces = {"application/json; charset=UTF-8"})
 public class HelloController {
 	
 	@Autowired

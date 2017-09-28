@@ -66,5 +66,6 @@
   	<module>eureka-common</module>
   	<module>eureka-client</module>
   	<module>eureka-ribbon</module>
+  	<module>eureka-feign</module>
   </modules>
 </project>
