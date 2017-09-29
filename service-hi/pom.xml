@@ -5,9 +5,9 @@
     <artifactId>spring-cloud</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>eureka-server</artifactId>
-  <name>eureka-server</name>
-  <description>服务注册中心-Eureka Server</description>
+  <artifactId>service-hi</artifactId>
+  <name>service-hi</name>
+  <description>服务提供者-Service Hi</description>
   
   <properties>
       <java.version>1.8</java.version>
@@ -21,6 +21,10 @@
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
+	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
     <!-- <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -31,23 +35,31 @@
         <scope>test</scope>
     </dependency>
     
-    <!--eureka server -->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-eureka-server</artifactId>
+        <artifactId>spring-cloud-starter-eureka</artifactId>
     </dependency>
     
+    <!-- dataSource -->
+    <dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>druid</artifactId>
+	</dependency>
   </dependencies>
   
   <build>
-  	<finalName>eureka server</finalName>
+  	<finalName>service-hi</finalName>
   	<plugins>
   		<plugin>
   			<groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <version>1.5.2.RELEASE</version>
             <configuration>
-                <mainClass>com.cloud.server.EurekaServerApplication</mainClass>
+                <mainClass>com.cloud.client.EurekaClientApplication</mainClass>
             </configuration>
             <executions>
                 <execution>
@@ -59,4 +71,5 @@
   		</plugin>
   	</plugins>
   </build>
+  
 </project>

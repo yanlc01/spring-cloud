@@ -1,0 +1,23 @@
+server:
+  port: 8765
+  tomcat:
+    basedir: I:/temp/cloud
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: service-feign
+#  profiles:
+#    active: dev
+
+#开启熔断器
+feign:
+  hystrix:
+    enabled: true
+
+#logging:
+#  config: classpath:logback-cloud.xml
