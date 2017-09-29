@@ -35,6 +35,7 @@
         <scope>test</scope>
     </dependency>
     
+    <!-- eureka -->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-eureka</artifactId>

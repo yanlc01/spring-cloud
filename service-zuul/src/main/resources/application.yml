@@ -1,0 +1,25 @@
+server:
+  port: 8769
+  tomcat:
+    basedir: I:/temp/cloud
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: service-zuul
+    
+#logging:
+#  config: classpath:logback-cloud.xml
+
+zuul:
+  routes:
+    ribbon:
+      path: /ribbon/**
+      serviceId: service-ribbon
+    feign:
+      path: /feign/**
+      serviceId: service-feign
