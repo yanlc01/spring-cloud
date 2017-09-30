@@ -18,8 +18,10 @@ spring:
 zuul:
   routes:
     ribbon:
-      path: /ribbon/**
+      path: /service-ribbon/**
       serviceId: service-ribbon
+      #url: http://localhost:8764
     feign:
-      path: /feign/**
+      path: /service-feign/**
       serviceId: service-feign
+      #url: http://localhost:8765
