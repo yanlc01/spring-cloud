@@ -1,5 +1,5 @@
 server:
-  port: 8763
+  port: 8989
   tomcat:
     basedir: I:/temp/cloud
 
@@ -12,7 +12,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: service-hi
+    name: service-miya
   zipkin:
     base-url: http://localhost:9411
     

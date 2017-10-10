@@ -1,0 +1,23 @@
+server:
+  port: 8769
+  tomcat:
+    basedir: I:/temp/cloud
+
+eureka:
+  instance:
+    hostname: eureka-server-peer2
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka-server-peer1:8761/eureka/
+
+spring:
+  profiles: peer2
+
+#spring:
+#  profiles:
+#    active: dev
+    
+#logging:
+#  config: classpath:logback-cloud.xml

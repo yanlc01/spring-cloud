@@ -1,4 +1,4 @@
-package com.cloud.client;
+package com.cloud.miya;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,12 +14,10 @@ import org.springframework.web.client.RestTemplate;
  */
 @EnableEurekaClient
 @SpringBootApplication
-public class EurekaClientApplication {
+public class ServiceMiyaApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaClientApplication.class, args);
-//		SpringApplication app = new SpringApplicationBuilder(EurekaServerApplication.class).build();
-//		app.run(args);
+		SpringApplication.run(ServiceMiyaApplication.class, args);
 	}
 	
 	@Bean

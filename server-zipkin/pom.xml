@@ -5,9 +5,8 @@
     <artifactId>spring-cloud</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>service-hi</artifactId>
-  <name>service-hi</name>
-  <description>服务提供者-Service Hi</description>
+  <artifactId>server-zipkin</artifactId>
+  <name>服务追踪-Server Zipkin</name>
   
   <properties>
       <java.version>1.8</java.version>
@@ -21,52 +20,32 @@
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
-	<dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-jdbc</artifactId>
-    </dependency>
-    <!-- <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency> -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-test</artifactId>
         <scope>test</scope>
     </dependency>
     
-    <!-- eureka -->
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-eureka</artifactId>
-    </dependency>
-    
     <!-- zipkin -->
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-zipkin</artifactId>
-    </dependency>
-    
-    <!-- dataSource -->
-    <dependency>
-	    <groupId>mysql</groupId>
-	    <artifactId>mysql-connector-java</artifactId>
+	<dependency>
+	    <groupId>io.zipkin.java</groupId>
+	    <artifactId>zipkin-server</artifactId>
 	</dependency>
 	<dependency>
-	    <groupId>com.alibaba</groupId>
-	    <artifactId>druid</artifactId>
+	    <groupId>io.zipkin.java</groupId>
+	    <artifactId>zipkin-autoconfigure-ui</artifactId>
 	</dependency>
   </dependencies>
   
   <build>
-  	<finalName>service-hi</finalName>
+  	<finalName>server-zipkin</finalName>
   	<plugins>
   		<plugin>
   			<groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <version>1.5.2.RELEASE</version>
             <configuration>
-                <mainClass>com.cloud.client.EurekaClientApplication</mainClass>
+                <mainClass>com.cloud.zipkin.ServerZipkinApplication</mainClass>
             </configuration>
             <executions>
                 <execution>

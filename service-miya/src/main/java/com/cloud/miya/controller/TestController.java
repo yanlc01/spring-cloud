@@ -1,4 +1,4 @@
-package com.cloud.client.controller;
+package com.cloud.miya.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,14 +24,14 @@ public class TestController {
 		return "hi " + name + ", I am from port : " + port;
 	}
 	
-	@RequestMapping(path = "/home", method = RequestMethod.GET)
-	public String callHome() {
-		return restTemplate.getForObject("http://localhost:8989/miya", String.class);
-	}
+	@RequestMapping("/miya")
+    public String home(){
+        return restTemplate.getForObject("http://localhost:8763/info", String.class);
+    }
 	
 	@RequestMapping(path = "/info", method = RequestMethod.GET)
 	public String info() {
-		return "I'm server-hi";
+		return "I'm server-miya";
 	}
 	
 }
