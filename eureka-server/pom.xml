@@ -57,6 +57,25 @@
                 </execution>
             </executions>
   		</plugin>
+  		
+  		<!-- tag::plugin[] -->
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>docker-maven-plugin</artifactId><!-- 用maven插件方式构建docker镜像 -->
+            <version>0.4.3</version>
+            <configuration>
+                <imageName>${docker.image.prefix}/${project.artifactId}</imageName><!-- 镜像名字 -->
+                <dockerDirectory>src/main/docker</dockerDirectory><!-- 指定Dockerfile的位置 -->
+                <resources><!-- 指那些需要和Dockerfile放在一起，在构建镜像时使用的文件，一般应用jar包需要纳入 -->
+                    <resource>
+                        <targetPath>/</targetPath>
+                        <directory>${project.build.directory}</directory>
+                        <include>${project.build.finalName}.jar</include>
+                    </resource>
+                </resources>
+            </configuration>
+        </plugin>
+        <!-- end::plugin[] -->
   	</plugins>
   </build>
 </project>

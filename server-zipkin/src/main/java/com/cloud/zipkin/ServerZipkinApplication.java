@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import zipkin.server.EnableZipkinServer;
 
+/**
+ * 服务追踪
+ */
 @EnableZipkinServer
 @SpringBootApplication
 public class ServerZipkinApplication {
